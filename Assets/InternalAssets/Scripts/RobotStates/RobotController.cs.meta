@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 8fa8111067f151c4797dda678a7ee46f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - player: {instanceID: 0}
+  - animator: {instanceID: 0}
+  - agent: {instanceID: 0}
+  - runState: {fileID: 11400000, guid: 230537ddf104cb146bbb2f617b833104, type: 2}
+  - walkState: {fileID: 11400000, guid: 1eedf76674a75964e856f55c0dd8722a, type: 2}
+  - waitState: {fileID: 11400000, guid: 0e3afe89d5bc63e48b435faa4504b047, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
