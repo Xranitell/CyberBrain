@@ -30,6 +30,7 @@ public class PlayerInteraction : MonoBehaviour
     }
     private void InteractionRay()
     {
+        
         Ray ray = PlayerMainScript.Instance.playerCamera.ViewportPointToRay(Vector3.one / 2f);
 
         RaycastHit hit;
@@ -47,7 +48,7 @@ public class PlayerInteraction : MonoBehaviour
                 hitSomething = true;
                 interactionText.text = _interactable.GetDescription();
 
-                if (Input.GetKey(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     _interactable.Interact();
                 }
