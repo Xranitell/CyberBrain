@@ -14,6 +14,8 @@ public class TerminalObject : MonoBehaviour, IInteractable
     
     [SerializeField] private Transform cameraPosition;
     private Camera _playerCamera;
+
+    public static bool InTerminal = false;
     
     public void Interact()
     {
@@ -31,6 +33,8 @@ public class TerminalObject : MonoBehaviour, IInteractable
         ChangeEnabledStateForComponents(false);
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
+
+        InTerminal = true;
     }
 
     public string GetDescription()
@@ -50,6 +54,7 @@ public class TerminalObject : MonoBehaviour, IInteractable
                 Cursor.visible = false;
                 ChangeEnabledStateForComponents(true);
                 Cursor.lockState = CursorLockMode.Locked;
+                InTerminal = false;
             })
         ;
     }

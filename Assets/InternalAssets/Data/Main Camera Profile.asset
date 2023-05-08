@@ -67,8 +67,8 @@ MonoBehaviour:
     overrideState: 0
     value: 360
   sampleCount:
-    overrideState: 0
-    value: 16
+    overrideState: 1
+    value: 14
 --- !u!114 &-2833362248950111139
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -91,7 +91,7 @@ MonoBehaviour:
     defaultState: 1
   intensity:
     overrideState: 1
-    value: 0.148
+    value: 0.093
   fastMode:
     overrideState: 1
     value: 1
@@ -122,7 +122,7 @@ MonoBehaviour:
     value: 0
   keyValue:
     overrideState: 1
-    value: 1.6
+    value: 1.58
   eyeAdaptation:
     overrideState: 0
     value: 0
@@ -172,7 +172,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.18
+    value: 0
   size:
     overrideState: 1
     value: 0.9
@@ -200,7 +200,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1.02
+    value: 0.7
   color:
     overrideState: 0
     value: {r: 0, g: 0, b: 0, a: 1}
