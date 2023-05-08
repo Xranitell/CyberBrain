@@ -11,11 +11,12 @@ public static class SaveLoadSystem
         var file = File.ReadAllText(Application.streamingAssetsPath + "/Save.json");
         try
         {
-            return JsonUtility.FromJson<Vector3>(file);
+            var a = JsonUtility.FromJson<Vector3>(file);
+            return a;
         }
         catch (Exception e)
         {
-            return new Vector3(-20,2,15);
+            return new Vector3(-20,2,-5);
         }
     }
 

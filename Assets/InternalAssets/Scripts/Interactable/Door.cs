@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,11 @@ public class Door : MonoBehaviour, IInteractable
 {
     [SerializeField] private Animator animator;
     private bool isOpened = false;
+
+    private void Start()
+    {
+        
+    }
 
     public void Interact()
     {

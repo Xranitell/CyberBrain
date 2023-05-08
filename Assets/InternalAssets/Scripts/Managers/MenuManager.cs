@@ -20,7 +20,7 @@ public class MenuManager : MonoBehaviour
 
     public void NewGameButton()
     {
-        SaveLoadSystem.SaveLastPosition(new Vector3(-20,2,15));
+        SaveLoadSystem.SaveLastPosition(new Vector3(-20,2,-5));
         LoadScene();
     }
 

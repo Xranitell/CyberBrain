@@ -15,6 +15,12 @@ public class PopUpsManager : MonoBehaviour
     public Image fade;
 
     [SerializeField] private float animationDurantion;
+    public static PopUpsManager Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -26,8 +32,6 @@ public class PopUpsManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !TerminalObject.InTerminal)
         {
-            Debug.Log("Open");
-
             pausePopUp.DOFade(.5f, animationDurantion);
             popUpElements.transform.DOScale(Vector3.one, animationDurantion);
             PlayerMainScript.Instance.mouseComponent.enabled = false;
@@ -43,7 +47,7 @@ public class PopUpsManager : MonoBehaviour
         DOTween.Sequence()
             .Append(fade.DOFade(1, animationDurantion))
             .Append(popUpElements.transform.DOScale(Vector3.zero, animationDurantion))
-            .AppendCallback(()=>Application.Quit());
+            .AppendCallback(()=>SceneManager.LoadScene("MenuScene"));
     }
 
     public void ContinueGame()
@@ -61,7 +65,11 @@ public class PopUpsManager : MonoBehaviour
         DOTween.Sequence()
             .Append(fade.DOFade(1, animationDurantion))
             .Append(popUpElements.transform.DOScale(Vector3.zero, animationDurantion))
-            .AppendCallback(()=>SceneManager.LoadScene("GameScene"));
+            .AppendCallback(() =>
+            {
+                DOTween.KillAll();
+                SceneManager.LoadScene("GameScene");
+            });
     }
     
 }

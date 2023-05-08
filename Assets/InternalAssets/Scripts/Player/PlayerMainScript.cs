@@ -20,7 +20,11 @@ public class PlayerMainScript : MonoBehaviour
     {
         Instance = this;
         cameraPosition.position = playerCamera.transform.position;
-        
+        ReturnToSpawnPoint();
     }
 
+    public void ReturnToSpawnPoint()
+    {
+        transform.position = SaveLoadSystem.LoadLastPosition();
+    }
 }

@@ -33,6 +33,7 @@ namespace Terminal
         private void Awake()
         {
             ResetTemplate();
+            codeInput.caretColor = Color.green;
         }
 
         public void RunCode() => InvokeAssemblyMethod(className, methodName);
@@ -49,19 +50,18 @@ namespace Terminal
 
             CSScriptEngine engine = new CSScriptEngine();
             
-            engine.AddOnCompilationFailedHandler(OnCompilationFailedAction);
-            engine.AddOnCompilationSucceededHandler(OnCompilationSucceededAction);
+            engine.AddUsings("using Terminal; using UnityEngine; using Laboratory;");
 
-            engine.AddUsings("using Terminal;using UnityEngine;using Laboratory;");
-            
             engine.CompileType(className, correctCode);
             
-            engine.RemoveOnCompilationFailedHandler(OnCompilationFailedAction);
-            engine.RemoveOnCompilationSucceededHandler(OnCompilationSucceededAction);
+            engine.AddOnCompilationFailedHandler(OnCompilationFailedAction);
+            engine.AddOnCompilationSucceededHandler(OnCompilationSucceededAction);
             
             IScript result = engine.CompileCode($"{className} sm = new {className}();sm.{methodName}();");
             result.Execute();
             
+            engine.RemoveOnCompilationFailedHandler(OnCompilationFailedAction);
+            engine.RemoveOnCompilationSucceededHandler(OnCompilationSucceededAction);
             
         }
         

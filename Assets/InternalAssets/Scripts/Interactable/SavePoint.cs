@@ -11,7 +11,6 @@ public class SavePoint : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SaveLoadSystem.SaveLastPosition(transform.position + offset);
-            Debug.Log("Saved!");
             this.gameObject.SetActive(false);
         }
     }
