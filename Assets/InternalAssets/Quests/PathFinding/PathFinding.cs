@@ -25,14 +25,12 @@ namespace Laboratory
 
         [SerializeField] UnityEvent onQuestComplete;
         [SerializeField] UnityEvent onQuestFailure;
-
-        private static PathFinding Instance;
+        
         private TrailRenderer _trailrenderer;
         private void Awake()
         {
             _trailrenderer = trail.GetComponentInChildren<TrailRenderer>();
             currentEnergy = maxEnergy;
-            Instance = this;
             UpdateText();
         }
 
@@ -52,21 +50,17 @@ namespace Laboratory
             energyAmount.text = currentEnergy + "/" + maxEnergy;
         }
 
-        public static PathNode[,] nodesGrid
+        public PathNode[,] nodesGrid
         {
             get
             {
-                PathNode[,] grid = new PathNode[5,5]; 
-                
-                for (int i = 0; i < Instance.Nodes.Count; i++)
+                PathNode[,] grid = new PathNode[5,5];
+                for (int i = 0; i < Nodes.Count; i++)
                 {
-                    Instance.Nodes[i].position = new Vector2Int(i / 5, i % 5);
-                    
-                    var pos = Instance.Nodes[i].position;
-                    
-                    grid[pos.x,pos.y] = Instance.Nodes[i];
+                    Nodes[i].position = new Vector2Int(i / 5, i % 5);
+                    var pos = Nodes[i].position;
+                    grid[pos.x,pos.y] = Nodes[i];
                 }
-
                 return grid;
             }
         }

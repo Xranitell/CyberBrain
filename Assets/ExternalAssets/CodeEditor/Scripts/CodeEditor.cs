@@ -55,13 +55,12 @@ namespace Terminal
             
             engine.AddUsings("using Terminal; using UnityEngine; using Laboratory;");
 
-            engine.CompileType(className, correctCode);
-            
             engine.AddOnCompilationFailedHandler(OnCompilationFailedAction);
             engine.AddOnCompilationSucceededHandler(OnCompilationSucceededAction);
             
+            engine.CompileType(className, correctCode);
             IScript result = engine.CompileCode($"{className} sm = new {className}();sm.{methodName}();");
-            result.Execute();
+            result?.Execute();
             
             engine.RemoveOnCompilationFailedHandler(OnCompilationFailedAction);
             engine.RemoveOnCompilationSucceededHandler(OnCompilationSucceededAction);
@@ -69,7 +68,7 @@ namespace Terminal
         }
         
         public void OnCompilationSucceededAction(CompilerOutput output)
-         {
+        {
              var msg = new StringBuilder();
              
              foreach (var error in output.Warnings)
@@ -77,7 +76,7 @@ namespace Terminal
              OnExecute?.Invoke("<color=yellow>" + msg + "</color>");
              
              OnExecute.Invoke("<color=green>Успешно!</color>...");
-         }
+        }
          public void OnCompilationFailedAction(CompilerOutput output)
          {
              if (output.Errors.Count > 0)

@@ -19,6 +19,12 @@ public class Door : MonoBehaviour, IInteractable
 
         animator.SetTrigger(isOpened ? "Open":"Close");
     }
+    public void Interact(bool Open)
+    {
+        isOpened = Open;
+
+        animator.SetTrigger(isOpened ? "Open":"Close");
+    }
 
     public string GetDescription()
     {

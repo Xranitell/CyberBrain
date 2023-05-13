@@ -7,7 +7,7 @@ namespace Laboratory
 {
     public class LaboratoryObjects : MonoBehaviour
     {
-        public static PathFinding APathFinding;
+        public static PathFinding APathFinding {get; private set; }
         public static PathFinding BFSPathFinding;
 
         private void Awake()
@@ -15,6 +15,7 @@ namespace Laboratory
             APathFinding = GameObject.Find("APathFinding").GetComponent<PathFinding>();
             //BFSPathFinding = GameObject.Find("BFSPathFinding").GetComponent<PathFinding>();
         }
+
     }
 }
 

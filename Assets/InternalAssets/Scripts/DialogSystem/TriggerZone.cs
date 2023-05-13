@@ -12,7 +12,7 @@ public class TriggerZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            actions.Invoke();
+            actions?.Invoke();
             this.gameObject.SetActive(false);
         }
     }
