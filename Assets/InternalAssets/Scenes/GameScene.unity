@@ -13306,7 +13306,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onSystemRefresh:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 549946345}
+        m_TargetAssemblyTypeName: ScreemScene, Assembly-CSharp
+        m_MethodName: RecolorAmbient
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &133601517
 GameObject:
   m_ObjectHideFlags: 0
@@ -27660,6 +27672,11 @@ MonoBehaviour:
       m_Calls: []
   firstPart: {fileID: 869428733}
   secondPart: {fileID: 530964310}
+  particles:
+  - {fileID: 114886227}
+  - {fileID: 299572598}
+  - {fileID: 76358033}
+  blueMaterial: {fileID: 2100000, guid: 5476ae29e2e50194abce19e5cacce575, type: 2}
 --- !u!4 &552034625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6954531691785998512, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
@@ -28197,6 +28214,10 @@ PrefabInstance:
     - target: {fileID: 8988187023409457756, guid: e8968f04287aafd4491178b49efae2cc, type: 3}
       propertyPath: m_Size.y
       value: 5.048277
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988187023409457756, guid: e8968f04287aafd4491178b49efae2cc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8988187023409457756, guid: e8968f04287aafd4491178b49efae2cc, type: 3}
       propertyPath: m_Center.x
@@ -30492,7 +30513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1676678458059319142, guid: ee4d863ce0b0c1c4587062d7a6620956, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -78.35021
+      value: -78.35046
       objectReference: {fileID: 0}
     - target: {fileID: 2947913030744438946, guid: ee4d863ce0b0c1c4587062d7a6620956, type: 3}
       propertyPath: m_AnchorMax.x
@@ -33746,6 +33767,10 @@ PrefabInstance:
     - target: {fileID: 417532, guid: 6c4905d8863281d4eba7458bba1f5284, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488008, guid: 6c4905d8863281d4eba7458bba1f5284, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.419
       objectReference: {fileID: 0}
     - target: {fileID: 3805504923257096770, guid: 6c4905d8863281d4eba7458bba1f5284, type: 3}
       propertyPath: m_VideoClip
@@ -39579,7 +39604,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.28481102
+        value: 0.13924217
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -41243,7 +41268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1534226086590596099, guid: c2da574df935ad24aa0524d3c0c4f301, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1534226086590596099, guid: c2da574df935ad24aa0524d3c0c4f301, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41255,7 +41280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1534226086590596099, guid: c2da574df935ad24aa0524d3c0c4f301, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -92.110825
+      value: -92.073
       objectReference: {fileID: 0}
     - target: {fileID: 1534226086590596099, guid: c2da574df935ad24aa0524d3c0c4f301, type: 3}
       propertyPath: m_LocalRotation.w
@@ -53917,6 +53942,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6659344368407436287, guid: bf6e3aef8bcb1344dbc32aa57bd798db, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659344368407436287, guid: bf6e3aef8bcb1344dbc32aa57bd798db, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 31e0fc990cc1a3e46b9676136de2c6bf, type: 3}
+    - target: {fileID: 6659344368407436287, guid: bf6e3aef8bcb1344dbc32aa57bd798db, type: 3}
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
@@ -54395,7 +54428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6772968322877012091, guid: 8e8fda8de2ff2e34b92c5d5d87c5528c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6772968322877012091, guid: 8e8fda8de2ff2e34b92c5d5d87c5528c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

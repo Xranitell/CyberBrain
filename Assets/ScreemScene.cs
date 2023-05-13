@@ -5,6 +5,7 @@ using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class ScreemScene : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class ScreemScene : MonoBehaviour
 
     [SerializeField] private GameObject firstPart;
     [SerializeField] private GameObject secondPart;
+
+    [SerializeField] List<ParticleSystem> particles = new List<ParticleSystem>();
+    [SerializeField] private Material blueMaterial;
     
     public void StartShow()
     {
@@ -45,5 +49,10 @@ public class ScreemScene : MonoBehaviour
     {
         firstPart.transform.DOPunchPosition(Vector3.left * 10,5,0,1);
         secondPart.transform.DOPunchPosition(Vector3.right * 10,5,0,1);
+    }
+
+    public void RecolorAmbient()
+    {
+        
     }
 }
