@@ -14,7 +14,7 @@ public static class SaveLoadSystem
             var a = JsonUtility.FromJson<Vector3>(file);
             return a;
         }
-        catch (Exception e)
+        catch 
         {
             return new Vector3(-20,2,-5);
         }

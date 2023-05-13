@@ -1,12 +1,9 @@
-using System;
-using System.CodeDom.Compiler;
+
 using System.Text;
-using Microsoft.CSharp;
 using UnityEngine;
 using NaughtyAttributes;
 using TMPro;
 using UCompile;
-using UnityEngine;
 
 namespace Terminal
 {
@@ -22,6 +19,7 @@ namespace Terminal
         
         //Стартовый шаблон кода
         [ResizableTextArea] public string codeTemplate;
+        [ResizableTextArea] public string solvedText;
 
         public string correctCode
         {
@@ -41,6 +39,11 @@ namespace Terminal
         public void ResetTemplate()
         {
             codeInput.text = codeTemplate;
+            ConsoleDebug.ClearConsole();
+        }
+        public void SetSolved()
+        {
+            codeInput.text = solvedText;
             ConsoleDebug.ClearConsole();
         }
 

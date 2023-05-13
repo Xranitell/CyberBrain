@@ -8,8 +8,8 @@ using UnityEngine.UI;
 
 public class PathNode : MonoBehaviour
 {
-    public Vector2Int Position;
-    [SerializeField] private MeshRenderer renderer;
+    public Vector2Int position;
+    [SerializeField] private MeshRenderer meshRenderer;
     
     [OnValueChanged("ChangeColor")]
     [SerializeField] private NodeState state;
@@ -70,7 +70,7 @@ public class PathNode : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
 
-        renderer.material.color = color;
+        meshRenderer.material.color = color;
     }
 }
 

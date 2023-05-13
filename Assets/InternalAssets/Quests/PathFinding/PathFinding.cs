@@ -60,9 +60,9 @@ namespace Laboratory
                 
                 for (int i = 0; i < Instance.Nodes.Count; i++)
                 {
-                    Instance.Nodes[i].Position = new Vector2Int(i / 5, i % 5);
+                    Instance.Nodes[i].position = new Vector2Int(i / 5, i % 5);
                     
-                    var pos = Instance.Nodes[i].Position;
+                    var pos = Instance.Nodes[i].position;
                     
                     grid[pos.x,pos.y] = Instance.Nodes[i];
                 }
@@ -122,7 +122,7 @@ namespace Laboratory
 
         private PathNode GetNodeBefore(PathNode currentNode)
         {
-            var curPos = currentNode.Position;
+            var curPos = currentNode.position;
 
             var offsets = new List<Vector2Int>()
             {
@@ -140,9 +140,9 @@ namespace Laboratory
                     if (nodesGrid[newCell.x,newCell.y].State == NodeState.Selected) 
                         return nodesGrid[newCell.x,newCell.y];
                 }
-                catch (Exception e)
+                catch
                 {
-                    
+                    // ignored
                 }
             }
             return null;
