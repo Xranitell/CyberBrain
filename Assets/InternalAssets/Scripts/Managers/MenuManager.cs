@@ -30,4 +30,11 @@ public class MenuManager : MonoBehaviour
             .Append(Fade.Instance.StartFade())
             .AppendCallback(()=>SceneManager.LoadScene("GameScene"));
     }
+    
+    public void QuitGame()
+    {
+        DOTween.Sequence()
+            .Append(Fade.Instance.StartFade())
+            .AppendCallback(()=>Application.Quit());
+    }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 using NaughtyAttributes;
 using TMPro;
 using UCompile;
+using System.Collections.Generic;
 
 namespace Terminal
 {
@@ -52,8 +53,8 @@ namespace Terminal
             ConsoleDebug.ClearConsole();
 
             CSScriptEngine engine = new CSScriptEngine();
-            
-            engine.AddUsings("using Terminal; using UnityEngine; using Laboratory;");
+
+            engine.AddUsings("using Terminal; using UnityEngine; using Laboratory; using System;using System.Collections.Generic; using System.Linq;");
 
             engine.AddOnCompilationFailedHandler(OnCompilationFailedAction);
             engine.AddOnCompilationSucceededHandler(OnCompilationSucceededAction);
@@ -72,10 +73,10 @@ namespace Terminal
              var msg = new StringBuilder();
              
              foreach (var error in output.Warnings)
-                 msg.AppendFormat("Warning: ({0})\n", error);
+                 msg.AppendFormat("Warning: ({0})", error);
              OnExecute?.Invoke("<color=yellow>" + msg + "</color>");
              
-             OnExecute.Invoke("<color=green>Успешно!</color>...");
+             OnExecute?.Invoke("<color=green>Успешно!</color>...");
         }
          public void OnCompilationFailedAction(CompilerOutput output)
          {

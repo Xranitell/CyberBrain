@@ -26,6 +26,6 @@ public class TV : MonoBehaviour, IInteractable
         public string GetDescription()
         {
             string state = isOn ? "<color=red>Выключения</color>" : "<color=green>Включения</color>";
-            return $"Нажмите <color=blue>[E]</color> для {state} двери";
+            return $"Нажмите <color=blue>[E]</color> для {state} дисплея";
         }
 }

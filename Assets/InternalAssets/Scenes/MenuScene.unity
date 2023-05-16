@@ -4517,11 +4517,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6090675335846945639, guid: 2c992ce80fdb5d74490bd4a622668cb9, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 873.926
+      value: 1141.4695
       objectReference: {fileID: 0}
     - target: {fileID: 6090675335846945639, guid: 2c992ce80fdb5d74490bd4a622668cb9, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 199.0623
+      value: 295.5234
       objectReference: {fileID: 0}
     - target: {fileID: 6090675335846945639, guid: 2c992ce80fdb5d74490bd4a622668cb9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4553,11 +4553,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6090675335846945639, guid: 2c992ce80fdb5d74490bd4a622668cb9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -495.38928
+      value: -363
       objectReference: {fileID: 0}
     - target: {fileID: 6090675335846945639, guid: 2c992ce80fdb5d74490bd4a622668cb9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 309.04916
+      value: 354
       objectReference: {fileID: 0}
     - target: {fileID: 6090675335846945639, guid: 2c992ce80fdb5d74490bd4a622668cb9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4573,11 +4573,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6749315163282226177, guid: 2c992ce80fdb5d74490bd4a622668cb9, type: 3}
       propertyPath: m_fontSize
-      value: 169.9
+      value: 228.56
       objectReference: {fileID: 0}
     - target: {fileID: 6749315163282226177, guid: 2c992ce80fdb5d74490bd4a622668cb9, type: 3}
       propertyPath: m_fontSizeMax
-      value: 169.9
+      value: 228.56
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c992ce80fdb5d74490bd4a622668cb9, type: 3}
@@ -9915,6 +9915,34 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u0412\u044B\u0445\u043E\u0434"
       objectReference: {fileID: 0}
+    - target: {fileID: 5589760952168257971, guid: beac362362244094c9e3b4ddebeb0a4a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589760952168257971, guid: beac362362244094c9e3b4ddebeb0a4a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589760952168257971, guid: beac362362244094c9e3b4ddebeb0a4a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2017423593}
+    - target: {fileID: 5589760952168257971, guid: beac362362244094c9e3b4ddebeb0a4a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589760952168257971, guid: beac362362244094c9e3b4ddebeb0a4a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589760952168257971, guid: beac362362244094c9e3b4ddebeb0a4a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589760952168257971, guid: beac362362244094c9e3b4ddebeb0a4a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: beac362362244094c9e3b4ddebeb0a4a, type: 3}
 --- !u!1001 &1983482093
@@ -10224,8 +10252,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 31e0fc990cc1a3e46b9676136de2c6bf, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
