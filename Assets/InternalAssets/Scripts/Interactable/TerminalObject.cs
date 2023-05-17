@@ -45,6 +45,8 @@ public class TerminalObject : MonoBehaviour, IInteractable
     {
         //Activate all components
         EventSystem.current.SetSelectedGameObject(null);
+
+        _playerCamera = PlayerMainScript.Instance.playerCamera;
         
         DOTween.Sequence()
             .Append(_playerCamera.transform.DOMove(PlayerMainScript.Instance.cameraPosition.position, 1))
