@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5103929358819916292}
   - component: {fileID: 4305083032792262847}
   - component: {fileID: 3956283156725878037}
+  - component: {fileID: 7292152880463212054}
   m_Layer: 0
   m_Name: Radio
   m_TagString: Untagged
@@ -195,3 +196,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &7292152880463212054
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6838745417958018776}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.42890438, y: 0.29493126, z: 0.16982289}
+  m_Center: {x: -0.0003159941, y: 0.14746563, z: -0.00026685378}

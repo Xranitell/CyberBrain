@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Laboratory;
 using TMPro;
 using UnityEngine;
 
@@ -21,11 +23,12 @@ public class Speaker : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        
+
     }
 
     private void Update()
     {
-
         if (messageAnimator.animationEnded
             && DialogQueue.Count > 0)
         {
