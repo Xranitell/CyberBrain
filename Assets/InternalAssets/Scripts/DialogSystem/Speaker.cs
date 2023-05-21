@@ -46,13 +46,19 @@ public class Speaker : MonoBehaviour
     
     private void PlayMessage(Message message)
     {
-        source.PlayOneShot(message.messageRecord);
+        var messageAnimationDuration = 3f;
+        
+        if (message.messageRecord != null)
+        {
+             messageAnimationDuration = message.messageRecord.length;
+             source.PlayOneShot(message.messageRecord);
+        }
+        
         messageActor.text = message.actor.ToString();
 
         StartCoroutine(messageAnimator
-            .AnimateText(message.messageText, message.messageRecord.length, message.additiveWaitTime));
+            .AnimateText(message.messageText, messageAnimationDuration, message.additiveWaitTime));
         
-        source.Play();
         message.onPlayMessage.Invoke();
     }
 
