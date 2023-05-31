@@ -7,22 +7,15 @@ public class Door : MonoBehaviour, IInteractable
 {
     [SerializeField] private Animator animator;
     private bool isOpened = false;
-
-    private void Start()
-    {
-        
-    }
-
+    private void Start() { }
     public void Interact()
     {
         isOpened = !isOpened;
-
         animator.SetTrigger(isOpened ? "Open":"Close");
     }
     public void Interact(bool Open)
     {
         isOpened = Open;
-
         animator.SetTrigger(isOpened ? "Open":"Close");
     }
 

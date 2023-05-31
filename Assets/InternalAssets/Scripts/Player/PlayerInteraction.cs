@@ -30,18 +30,15 @@ public class PlayerInteraction : MonoBehaviour
     }
     private void InteractionRay()
     {
-        
         Ray ray = PlayerMainScript.Instance.playerCamera.ViewportPointToRay(Vector3.one / 2f);
-
         RaycastHit hit;
         bool hitSomething = false;
 
         if (Physics.Raycast(ray, out hit, interactionDistance))
         {
-            if ( _cachedHitObject != hit.collider.gameObject || _cachedHitObject == null)
-            {
+            if ( _cachedHitObject != hit.collider.gameObject 
+                 || _cachedHitObject == null)
                 _interactable = hit.collider.GetComponent<IInteractable>();
-            }
             
             if (_interactable != null)
             {
@@ -56,12 +53,7 @@ public class PlayerInteraction : MonoBehaviour
 
             _cachedHitObject = hit.collider.gameObject;
         }
-
         if (interactionUI.activeSelf != hitSomething && enabled)
-        {
             interactionUI.SetActive(hitSomething);
-            Debug.Log("Activate");
-        };
-
     }
 }

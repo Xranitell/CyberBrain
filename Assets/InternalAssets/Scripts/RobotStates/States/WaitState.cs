@@ -9,14 +9,7 @@ public class WaitState : State
     {
         character.agent.isStopped = true;
     }
+    public override void RunUpdate() {}
 
-    public override void RunUpdate()
-    {
-        
-    }
-
-    public override void UnInit()
-    {
-        
-    }
+    public override void UnInit() {}
 }

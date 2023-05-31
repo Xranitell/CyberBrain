@@ -17,17 +17,12 @@ public class PopUpsManager : MonoBehaviour
     [SerializeField] private float animationDurantion;
     public static PopUpsManager Instance;
 
-    private void Awake()
-    {
-        Instance = this;
-    }
-
+    private void Awake() => Instance = this;
     private void Start()
     {
         fade.material.color = Color.black;
         fade.DOFade(0, animationDurantion);
     }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !TerminalObject.InTerminal)
@@ -40,8 +35,6 @@ public class PopUpsManager : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(null);
         }
     }
-
-
     public void ExitGame()
     {
         DOTween.Sequence()

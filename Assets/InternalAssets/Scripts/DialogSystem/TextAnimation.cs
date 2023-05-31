@@ -5,7 +5,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
-[RequireComponent(typeof(TMP_Text))]public class TextAnimation : MonoBehaviour
+[RequireComponent(typeof(TMP_Text))]
+public class TextAnimation : MonoBehaviour
 {
     private TMP_Text tmpText;
 
@@ -15,7 +16,6 @@ using UnityEngine.PlayerLoop;
     {
         tmpText = GetComponent<TMP_Text>();
     }
-    
     public IEnumerator AnimateText(string messageText, float animationDuration, float additiveWaitTime)
     {
         tmpText.text = string.Empty;

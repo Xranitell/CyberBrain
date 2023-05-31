@@ -16,9 +16,5 @@ public class TriggerZone : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
-
-    private void Awake()
-    {
-        
-    }
+    private void Awake() { }
 }

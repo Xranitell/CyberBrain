@@ -47,18 +47,14 @@ public class Speaker : MonoBehaviour
     private void PlayMessage(Message message)
     {
         var messageAnimationDuration = 3f;
-        
         if (message.messageRecord != null)
         {
              messageAnimationDuration = message.messageRecord.length;
              source.PlayOneShot(message.messageRecord);
         }
-        
         messageActor.text = message.actor.ToString();
-
         StartCoroutine(messageAnimator
             .AnimateText(message.messageText, messageAnimationDuration, message.additiveWaitTime));
-        
         message.onPlayMessage.Invoke();
     }
 

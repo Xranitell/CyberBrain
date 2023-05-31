@@ -16,7 +16,7 @@ public class PathNode : MonoBehaviour
 
     public NodeState State
     {
-        get { return state; }
+        get => state;
         private set 
         {
             state = value;
@@ -26,50 +26,29 @@ public class PathNode : MonoBehaviour
 
     public void SelectNode()
     {
-        if (State != NodeState.Damaged)
-        {
-            State = NodeState.Selected;
-        }
+        if (State != NodeState.Damaged) State = NodeState.Selected;
     }
 
     public void ActivateNode()
     {
-        if (State != NodeState.Damaged)
-        {
-            State = NodeState.Active;
-        }
+        if (State != NodeState.Damaged) State = NodeState.Active;
     }
-
     public void UnselectNode()
     {
-        if (State != NodeState.Damaged)
-        {
-            State = NodeState.Default;
-        }
+        if (State != NodeState.Damaged) State = NodeState.Default;
     }
     
     private void ChangeColor()
     {
         Color color;
-
         switch (state)
         {
-            case NodeState.Active:
-                color = Color.green;
-                break;
-            case NodeState.Damaged:
-                color = Color.red;
-                break;
-            case NodeState.Default:
-                color = Color.gray;
-                break;
-            case NodeState.Selected:
-                color = Color.blue;
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
+            case NodeState.Active: color = Color.green; break;
+            case NodeState.Damaged: color = Color.red; break;
+            case NodeState.Default: color = Color.gray; break;
+            case NodeState.Selected: color = Color.blue; break;
+            default: throw new ArgumentOutOfRangeException();
         }
-
         meshRenderer.material.color = color;
     }
 }

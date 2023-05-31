@@ -16,10 +16,7 @@ public class RobotController : MonoBehaviour
     [SerializeField] private float waitDistance = 4;
     [SerializeField] private float teleportDistance = 20;
     [SerializeField] private Vector3 teleportOffset = new Vector3(-2,0,0);
-    
-
     private State CurrentState;
-
     [SerializeField] private RunState runState;
     [SerializeField] private WalkState walkState;
     [SerializeField] private WaitState waitState;
@@ -32,24 +29,14 @@ public class RobotController : MonoBehaviour
     private void Update()
     {
         var dist = Vector3.Distance(player.position, transform.position);
-        
         if (dist > walkDistance) //Дистанция состояния бега
-        {
             SetState(runState);
-        }
         else if (dist <= walkDistance && dist > waitDistance) //Дистанция ходьбы
-        {
             SetState(walkState);
-        }
         else if (dist < waitDistance)
-        {
             SetState(waitState);
-        }
         if (dist >= teleportDistance)
-        {
-            
-        }
-        
+            TeleportToPlayer();
         CurrentState.RunUpdate();
     }
 
@@ -63,10 +50,8 @@ public class RobotController : MonoBehaviour
     public void SetState(State state)
     {
         CurrentState?.UnInit();
-        
         CurrentState = Instantiate(state);
         CurrentState.character = this;
-        
         CurrentState.Init();
     }
 

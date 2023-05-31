@@ -12,23 +12,14 @@ namespace Terminal
     public class CodeEditor : MonoBehaviour
     {
         public ExecuteLogHandler OnExecute;
-
         public TMP_InputField codeInput;
-
         [BoxGroup("ExecutableParams")] [SerializeField] string className;
         [BoxGroup("ExecutableParams")] [SerializeField] string methodName;
-        
         //Стартовый шаблон кода
         [ResizableTextArea] public string codeTemplate;
         [ResizableTextArea] public string solvedText;
+        public string correctCode => FormatCode(codeInput.text);
 
-        public string correctCode
-        {
-            get
-            {
-                return FormatCode(codeInput.text);
-            }
-        }
         private void Awake()
         {
             ResetTemplate();
@@ -51,18 +42,21 @@ namespace Terminal
         private void InvokeAssemblyMethod(string className, string methodName)
         {
             ConsoleDebug.ClearConsole();
-
             CSScriptEngine engine = new CSScriptEngine();
-
-            engine.AddUsings("using Terminal; using UnityEngine; using Laboratory; using System;using System.Collections.Generic; using System.Linq;");
-
+            engine.AddUsings
+                (
+                "using Terminal; " +
+                 "using UnityEngine; " +
+                 "using Laboratory; " +
+                 "using System;" +
+                 "using System.Collections.Generic; " +
+                 "using System.Linq;"
+                );
             engine.AddOnCompilationFailedHandler(OnCompilationFailedAction);
             engine.AddOnCompilationSucceededHandler(OnCompilationSucceededAction);
-            
             engine.CompileType(className, correctCode);
             IScript result = engine.CompileCode($"{className} sm = new {className}();sm.{methodName}();");
             result?.Execute();
-            
             engine.RemoveOnCompilationFailedHandler(OnCompilationFailedAction);
             engine.RemoveOnCompilationSucceededHandler(OnCompilationSucceededAction);
             

@@ -13,9 +13,8 @@ public class Message
 {
     public Actor actor;
     public AudioClip messageRecord;
-    [ResizableTextArea]public string messageText;
+    [ResizableTextArea] public string messageText;
     public float additiveWaitTime = 1f;
-
     public UnityEvent onPlayMessage;
 }
 

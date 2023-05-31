@@ -16,9 +16,7 @@ public class SortingAlgorithm : MonoBehaviour
 
     public Queue<SortingQueueItem> sortingQueue = new Queue<SortingQueueItem>();
     public List<SortPlatform> Platforms => sortPlatforms;
-
     [SerializeField] private bool invertMove = false;
-    
     private bool animIsEnded = true;
     
     private void Update()

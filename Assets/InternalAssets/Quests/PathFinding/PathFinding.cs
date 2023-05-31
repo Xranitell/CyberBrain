@@ -38,10 +38,7 @@ namespace Laboratory
         {
             foreach (var node in nodesGrid)
             {
-                if (node.State == NodeState.Active)
-                {
-                    node.SelectNode();
-                }
+                if (node.State == NodeState.Active) node.SelectNode();
             }
         }
         
@@ -78,22 +75,16 @@ namespace Laboratory
         private IEnumerator CheckCoroutine()
         {
             currentEnergy = maxEnergy;
-            
             PathNode currentNode = nodesGrid[startNode.x,startNode.y];
-            
             _trailrenderer.time = 0.01f;
             yield return new WaitForSeconds(0.02f);
             trail.transform.position = currentNode.transform.position;
             _trailrenderer.time = 5f;
-            
             currentNode.ActivateNode();
             do
             {
                 currentNode = GetNodeBefore(currentNode);
-                if (currentNode == null)
-                {
-                    onQuestFailure?.Invoke();
-                }
+                if (currentNode == null) onQuestFailure?.Invoke();
                 else
                 {
                     currentEnergy--;
@@ -102,7 +93,6 @@ namespace Laboratory
                     trail.transform.DOMove(currentNode.transform.position, 0.5f);
                     yield return new WaitForSeconds(0.5f);
                 }
-
                 if (currentNode == nodesGrid[endNode.x, endNode.y])
                 {
                     onQuestComplete?.Invoke();
@@ -111,7 +101,6 @@ namespace Laboratory
                 
             } 
             while (currentNode != nodesGrid[endNode.x, endNode.y] && currentEnergy > 0);
-            
         }
 
         private PathNode GetNodeBefore(PathNode currentNode)
